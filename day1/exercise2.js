@@ -1,7 +1,7 @@
 import {input} from './input.js';
 import {TextListToArray} from '../data-loaders/TextListToArray.js';
 
-let data = TextListToArray(input);
+let inputFormatted = TextListToArray(input);
 
 // Find the THREE entries that sum to 2020 and then multiply those two numbers together
 
@@ -13,7 +13,7 @@ let data = TextListToArray(input);
 // else continue
 
 // SOLUTION:
-function multipleOf2020SumOfThree() {
+function multipleOf2020SumOfThree(data) {
     data.some(num => {
         let difference = 2020 - parseInt(num);
 
@@ -30,4 +30,4 @@ function multipleOf2020SumOfThree() {
     });
 }
 
-multipleOf2020SumOfThree();
+multipleOf2020SumOfThree(inputFormatted);
