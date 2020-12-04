@@ -1,7 +1,7 @@
 import {input} from './input.js';
-import {TextListToArray} from '../data-loaders/TextListToArray.js';
+import {TextListToArrayOfStrings} from '../data-loaders/TextListToArrayOfStrings.js';
 
-let inputFormatted = TextListToArray(input);
+let inputFormatted = TextListToArrayOfStrings(input);
 
 // How many passwords are valid according to their policies?
 
