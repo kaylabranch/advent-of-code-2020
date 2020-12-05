@@ -55,7 +55,7 @@ function getSeatId(seat) {
     return (findRow(seat.slice(0, 7)) * 8) + findColumn(seat.slice(7, 10));
 }
 
-function getListOfSeatIds(data) {
+export function getListOfSeatIds(data) {
     return data.map(seat => {
         return getSeatId(seat);
     });
