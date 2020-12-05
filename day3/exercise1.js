@@ -10,9 +10,9 @@ let inputFormatted = TextListToArrayOfStrings(input);
 // iterate data, incrementing trees for each #
 
 // SOLUTION:
-function numOfTrees(data, rowsToTraverse, colsToTraverse) {
+export const numOfTrees = (data, rowsToTraverse, colsToTraverse) => {
     // Manipulate data input
-    let dataMultiplier = Math.ceil(((data.length / data[0].length) / rowsToTraverse) * colsToTraverse);
+    let dataMultiplier = Math.ceil((data.length / data[0].length) * rowsToTraverse * colsToTraverse);
     let datasetLarge = data.map(row => {
         return row.repeat(dataMultiplier);
     });
@@ -20,13 +20,16 @@ function numOfTrees(data, rowsToTraverse, colsToTraverse) {
     // Iterate
     let totalTrees = 0;
     datasetLarge.forEach((row, i) => {
-        let node = i === 0 ? row[0] : row[colsToTraverse * i];
-        if (node === '#') {
-            totalTrees++;
+        if (i % rowsToTraverse === 0) {
+            let node = i === 0 ? row[0] : row[colsToTraverse * (i / rowsToTraverse)];
+
+            if (node === '#') {
+                totalTrees++;
+            }
         }
     });
 
     return totalTrees;
 }
 
-numOfTrees(inputFormatted, 1, 3);
+numOfTrees(inputFormatted, 2, 1);
