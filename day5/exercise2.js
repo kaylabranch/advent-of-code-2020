@@ -7,9 +7,9 @@ let inputFormatted = TextListToArrayOfStrings(input);
 // What is the ID of your seat?
 
 // SOLUTION:
-let sortedSeatIds = getListOfSeatIds(inputFormatted).sort(function(a, b) { return a - b; });
-
 function findMissingSeat(data) {
+    let sortedSeatIds = getListOfSeatIds(data).sort(function(a, b) { return a - b; });
+
     let seatBeforeMissing = sortedSeatIds.filter((seat, index) => {
         return (seat + 1 !== sortedSeatIds[index + 1]) && (index + 1 !== sortedSeatIds.length);
     });
@@ -17,4 +17,4 @@ function findMissingSeat(data) {
     return parseInt(seatBeforeMissing) + 1;
 }
 
-findMissingSeat(sortedSeatIds);
+findMissingSeat(inputFormatted);
