@@ -11,7 +11,7 @@ let inputFormatted = TextListToArrayOfArrays(input);
 // increment total if so
 
 // SOLUTION:
-const requiredFields = [
+export const requiredFields = [
     'byr',
     'iyr',
     'eyr',
@@ -21,7 +21,7 @@ const requiredFields = [
     'pid'
 ]
 
-function numOfValidPassports(data) {
+export function numOfValidPassports(data) {
     let total = 0;
 
     data.forEach(passport => {
