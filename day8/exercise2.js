@@ -24,8 +24,11 @@ function getFixedAccumulatorValue(data) {
 
         let results = getFinalAccumulatorValue(fixedData);
 
-        if (results[2] === false) {
-            accumulator = results[1];
+        // results[1] is a boolean telling us if this run ended in a loop 
+        // or if the run completed the program without looping (false = no loop)
+        if (results[1] === false) {
+            // results[0] is the accumulator value from this run with the one value changed
+            accumulator = results[0];
             break;
         }
         else {

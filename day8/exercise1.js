@@ -41,7 +41,8 @@ export function getFinalAccumulatorValue(data) {
         }
     }
     
-    return [index, accumulator, indexSet.has(index)];
+    // indexSet.has(index) indicates that the index has been run before, so we're in a loop (true = loop)
+    return [accumulator, indexSet.has(index)];
 }
 
 getFinalAccumulatorValue(inputFormatted);
