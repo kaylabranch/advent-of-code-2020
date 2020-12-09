@@ -14,7 +14,7 @@ let inputFormatted = TextListToArrayOfStrings(input);
 // if not, return and break
 
 // SOLUTION:
-function getFirstNonSumNumber(data) {
+export function getFirstNonSumNumber(data) {
     let preambleLength = 25;
     let preambleIndex = 0;
  
