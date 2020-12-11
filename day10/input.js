@@ -1,4 +1,5 @@
-export const input = `46
+export const input = `
+46
 63
 21
 115
