@@ -16,15 +16,15 @@ let inputFormatted = TextListToArrayOfStrings(input);
 // after for each, go through each item in set and return += values
 
 // SOLUTION:
-function getMask(mask) {
+export function getMask(mask) {
     return mask.match(/(?<=mask\s=\s).*/)?.[0];
 }
 
-function getMemory(memory) {
+export function getMemory(memory) {
     return [parseInt(memory.match(/(?<=\[).+?(?=\])/)?.[0]), parseInt(memory.match(/(?<=\=\s).*/)?.[0])];
 }
 
-function convertNumTo36Bits(value) {
+export function convertNumTo36Bits(value) {
     let valToBits = value.toString(2);
     let zerosToAdd = 36 - valToBits.length;
     for (var i = 0; i < zerosToAdd; i++) {
