@@ -17,24 +17,16 @@ export function generateNewMap(arr) {
 function get2020thNum(data) {
     let dataArr = data[0].split(',');
 
-    // Keep last num in memory so we don't have to keep entire list
+    // Keep last / next nums in memory so we don't have to keep entire list
     let currentNum = parseInt(dataArr.pop());
     let nextNum;
 
-    // Initiate map with current data
+    // Initiate map with current data, need to store last index of/and value but not entire list
     let listMap = generateNewMap(dataArr);
 
     // Do this 2019 times to get to our goal number - we calc 2020 num in 2019 iteration, zero-based index
     for (var i = listMap.size; i < 2019; i++) {
-        if (listMap.has(currentNum)) {   
-            // Seen it before
-            nextNum = i - listMap.get(currentNum);
-        }
-        else {
-            // Is first time
-            nextNum = 0;
-        }
-
+        nextNum = listMap.has(currentNum) ? i - listMap.get(currentNum) : 0;
         listMap.set(currentNum, i);
         currentNum = nextNum;
     }
