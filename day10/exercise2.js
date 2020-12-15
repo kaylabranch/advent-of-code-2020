@@ -9,6 +9,7 @@ let sortedInput = inputFormatted.sort((a, b) => a - b);
 // PSEUDOCODE:
 // memoization + recursion
 // sort input for speed
+// WOOF
 
 // SOLUTION:
 const adapterConfigurations = [];

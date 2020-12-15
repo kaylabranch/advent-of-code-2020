@@ -5,6 +5,7 @@ let inputFormatted = TextListToArrayOfStrings(input);
 
 // What is the earliest timestamp such that all of the listed bus IDs 
 // depart at offsets matching their positions in the list?
+// WOOF
 
 // SOLUTION:
 function getBusIdTimesMinutesToWait(data) {
